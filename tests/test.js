@@ -30,18 +30,5 @@ describe("Products Operation", () => {
 					}
 				});
 		});
-		it("+ should return a list of products", (done) => {
-			chai.request(app)
-				.get("/catalog/Products")
-				.end((error, response) => {
-					try {
-						response.should.have.status(200);
-						response.body.value.should.be.an("array").to.have.lengthOf(3);
-						done();
-					} catch (error) {
-						done(error);
-					}
-				});
-		});
 	});
 });
